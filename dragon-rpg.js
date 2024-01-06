@@ -185,7 +185,13 @@ function caution(){
   alertText.innerText = "Are you sure you want to fight " + monsters[fighting].name + "?";
   alertBox.style.display = "block";
   yesButton.onclick = goFight;
-  noButton.onclick = goCave;
+  if (fighting === 2) {
+    noButton.onclick = goTown;
+  }
+  else{
+    noButton.onclick = goCave;
+  }
+  
 }
 
 function goFight() {
