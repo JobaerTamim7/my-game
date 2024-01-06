@@ -16,6 +16,10 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+const alertBox = document.querySelector("#alertBox");
+const alertText = document.querySelector("#alertText");
+const yesButton = document.querySelector("#alertButtonYes");
+const noButton = document.querySelector("#alertButtonNo");
 const weapons = [
   { name: 'stick', power: 5 },
   { name: 'dagger', power: 30 },
@@ -97,6 +101,7 @@ button3.onclick = fightDragon;
 
 function update(location) {
   monsterStats.style.display = "none";
+  alertBox.style.display = "none";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
   button3.innerText = location["button text"][2];
@@ -164,23 +169,23 @@ function sellWeapon() {
 function fightSlime() {
   fighting = 0;
   caution();
-  goFight();
 }
 
 function fightBeast() {
   fighting = 1;
   caution();
-  goFight();
 }
 
 function fightDragon() {
   fighting = 2;
   caution();
-  goFight();
 }
 
 function caution(){
-  alert("Are you sure you want to fight with " + monsters[fighting].name + "?");
+  alertText.innerText = "Are you sure you want to fight " + monsters[fighting].name + "?";
+  alertBox.style.display = "block";
+  yesButton.onclick = goFight;
+  noButton.onclick = goCave;
 }
 
 function goFight() {

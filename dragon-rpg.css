@@ -33,21 +33,16 @@ body {
   }
   
   #alertBox{
-    color: black;
-    display: flexbox;
-    justify-content: center;
-  }
-
-  #alertText{
     background-color: teal;
-    color: black;
+    color: gold;
+    font-size: 20px;
     font-weight: bolder;
     text-align: center;
+    display: none;
     margin: 2px;
     border: 2px solid #00002e;
     padding: 2px;
   }
-
   .stat {
     padding-right: 10px;
   }
